@@ -19,7 +19,7 @@
           title: 'Common Library',
           sidebarMeta: {
             icon: 'ion-compose',
-            order: 250,
+            order: 0,
           },
         })
         .state('commonlibrary.eventgroups', {
@@ -29,7 +29,7 @@
           title: 'Event Groups',
           sidebarMeta: {
             icon: 'ion-ios-location-outline',
-            order: 500,
+            order: 2,
           },
         })
         .state('commonlibrary.events', {
@@ -38,7 +38,37 @@
           controller: 'eventsCtrl',
           title: 'Events',
           sidebarMeta: {
-            order: 0,
+            order: 1,
+          },
+        })
+        .state('commonlibrary.premium', {
+          url: '/premium',
+          //templateUrl: 'app/pages/commonlibrary/premium/premium.html',
+          //controller: 'premiumCtrl',
+          abstract: true,
+          title: 'Premium Calc.',
+          sidebarMeta: {
+            order: 3,
+          },
+        })
+        .state('commonlibrary.ui', {
+          url: '/clui',
+          //templateUrl: 'app/pages/commonlibrary/premium/premium.html',
+          //controller: 'premiumCtrl',
+          abstract: true,
+          title: 'Form component',
+          sidebarMeta: {
+            order: 4,
+          },
+        })
+        .state('commonlibrary.report', {
+          url: '/clreport',
+          //templateUrl: 'app/pages/commonlibrary/premium/premium.html',
+          //controller: 'premiumCtrl',
+          abstract: true,
+          title: 'Report component',
+          sidebarMeta: {
+            order: 5,
           },
         })
 

@@ -9,15 +9,14 @@
 
 
         $scope.palette = [];
-        $scope.watchers = [];
+        //$scope.watchers = [];
+        $scope.input = {};
+        $scope.input.watchers = '1,2,3,4'
 
         dataSvc.getEvents().then(function(data) {
             $scope.coreEvents = data.coreEvents
             $scope.palette = data.palette
         })
-
-
-
 
         $scope.editEvent = function(obj) {
             var dataObj
@@ -79,10 +78,12 @@
                 })
             })
         }
-
         $scope.addWatcher = function() {
             //$scope.watchers += '100,'
-            console.debug($scope.watchers)
+
+
+            console.debug($scope.input.watchers)
+
 
         }
 

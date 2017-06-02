@@ -24,11 +24,10 @@
           mode: 'javascript'}" ng-model="code.attrValue"></div>
     <div class="row">
         <div class="col-md-1">
-            <button type="button" class="btn btn-with-icon" onclick="addWatcher()"><i class="ion-plus-round"></i></button>
+            <button type="button" class="btn btn-with-icon" ng-click="addWatcher()"><i class="ion-plus-round"></i></button>
         </div>
         <div class="form-group col-md-11">
-            <input type="text" tag-input="primary" ng-model="watchers" data-role="tagsinput" placeholder="Add Watcher">
-
+            <input type="text" tag-input="primary" ng-model="input.watchers"  placeholder="Add Watcher">
         </div>
     </div>
 

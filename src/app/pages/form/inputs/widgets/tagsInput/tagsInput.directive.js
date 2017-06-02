@@ -14,7 +14,7 @@
       restrict: 'A',
       link: function( $scope, elem, attr) {
         $(elem).tagsinput({
-          tagClass:  'label label-' + attr.tagInput
+          //tagClass:  'label label-' + attr.tagInput
         });
       }
     };
