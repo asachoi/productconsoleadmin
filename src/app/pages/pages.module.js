@@ -9,6 +9,7 @@
     'BlurAdmin.pages.dashboard',
     'BlurAdmin.pages.commonlibrary',
     'BlurAdmin.pages.productsetup',
+    'BlurAdmin.pages.configuration',
     //'BlurAdmin.pages.ui',
     //'BlurAdmin.pages.form',
   ])

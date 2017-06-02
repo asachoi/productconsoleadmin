@@ -40,6 +40,34 @@
             order: 0,
           },
         })
+        .state('productsetup.configuration', {
+          url: '/psconfiguration',
+          //templateUrl: 'app/pages/maps/google-maps/google-maps.html',
+          //controller: 'GmapPageCtrl',
+          title: 'Configuration',
+          sidebarMeta: {
+            order: 0,
+          },
+        })
+        .state('productsetup.formlayout', {
+          url: '/psformlayout',
+          //templateUrl: 'app/pages/maps/google-maps/google-maps.html',
+          //controller: 'GmapPageCtrl',
+          title: 'Form Layout',
+          sidebarMeta: {
+            order: 0,
+          },
+        })
+        .state('productsetup.reportlayout', {
+          url: '/psreportlayout',
+          //templateUrl: 'app/pages/maps/google-maps/google-maps.html',
+          //controller: 'GmapPageCtrl',
+          title: 'Report Layout',
+          sidebarMeta: {
+            order: 0,
+          },
+        })
+
 
   }
 
