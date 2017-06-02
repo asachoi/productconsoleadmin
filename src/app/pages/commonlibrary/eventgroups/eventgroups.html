@@ -1,0 +1,102 @@
+
+<div class="widgets">
+
+    <div class="row">
+        <div class="col-md-12">
+        <div ba-panel ba-panel-class="panel light-text ">
+            <button type="button"
+                    class="btn btn-primary btn-raised btn-long"
+                    ng-repeat="n in groups" ng-click="productSelected(n)"
+                    ng-class="{'btn-default':currProduct.name == n.name}"
+            >
+                {{n.name}}
+
+
+            </button>
+        </div>
+        </div>
+
+
+    </div>
+    <div class="row" ng-show="currProduct">
+        <div class="col-md-4">
+            <div ba-panel ba-panel-class="panel light-text" ba-panel-title="Available Events">
+                <div
+                        layout="column"
+                        as-sortable="sortableCloneOptions"
+                        ng-model="palette"
+                >
+                    <div
+                            class="draggable-item button-wrapper"
+                            ng-repeat="obj in palette"
+                            as-sortable-item
+                            ng-click="editEvent(obj)"
+                    >
+                        <button type="button"
+                                class="draggable-handle btn btn-default btn-raised btn-long"
+                                as-sortable-item-handle
+                        >
+                            {{obj.name}}
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div ba-panel ba-panel-class="panel light-text" ba-panel-title="Group Info">
+                <div class="form-group col-md-3">
+                    <label for="">Group ID</label>
+                    <input type="text" class="form-control" ng-model="self['groupId']" placeholder="group id">
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="">Product ID</label>
+                    <input type="text" class="form-control" ng-model="self['productId']" placeholder="productId">
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="">Product Type</label>
+                    <input type="text" class="form-control" ng-model="self['productType']" placeholder="productType">
+                </div>
+            </div>
+            <div ba-panel ba-panel-class="panel light-text" ba-panel-title="Steps">
+                <div
+                        class="drop-area"
+                        layout="column"
+                        as-sortable="sortableOptions"
+                        ng-model="dropped"
+                >
+
+                    <div
+                            class="draggable-item"
+                            ng-repeat="obj in dropped"
+                            as-sortable-item
+
+                    >
+                        <button type="button"
+                                class="draggable-handle btn btn-default btn-raised btn-long"
+
+                                as-sortable-item-handle
+
+                        >
+                            <span ng-click="removeEvent(obj)"><i class="material-icons md-32">X</i></span>
+
+                            {{obj.name}}
+
+
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+

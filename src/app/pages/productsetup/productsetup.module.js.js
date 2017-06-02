@@ -5,38 +5,37 @@
 (function () {
   'use strict';
 
-  angular.module('BlurAdmin.pages.commonlibrary',
-  [])
+  angular.module('BlurAdmin.pages.productsetup', [])
       .config(routeConfig);
 
   /** @ngInject */
   function routeConfig($stateProvider) {
     $stateProvider
-        .state('commonlibrary', {
-          url: '/commonlibrary',
+        .state('productsetup', {
+          url: '/productsetup',
           template : '<ui-view autoscroll="true" autoscroll-body-top></ui-view>',
           abstract: true,
-          title: 'Common Library',
+          title: 'Product Setup',
           sidebarMeta: {
             icon: 'ion-compose',
             order: 250,
           },
         })
-        .state('commonlibrary.eventgroups', {
-          url: '/eventgroups',
-          templateUrl: 'app/pages/commonlibrary/eventgroups/eventgroups.html',
-          controller: 'eventGroupsCtrl',
-          title: 'Event Groups',
+        .state('productsetup.mapping', {
+          url: '/psmapping',
+          //templateUrl: 'app/pages/maps/maps.html',
+          abstract: true,
+          title: 'Mapping',
           sidebarMeta: {
             icon: 'ion-ios-location-outline',
             order: 500,
           },
         })
-        .state('commonlibrary.events', {
-          url: '/events',
-           templateUrl: 'app/pages/commonlibrary/events/events.html',
-          controller: 'eventsCtrl',
-          title: 'Events',
+        .state('productsetup.calculation', {
+          url: '/pscalculation',
+          //templateUrl: 'app/pages/maps/google-maps/google-maps.html',
+          //controller: 'GmapPageCtrl',
+          title: 'Calculation',
           sidebarMeta: {
             order: 0,
           },

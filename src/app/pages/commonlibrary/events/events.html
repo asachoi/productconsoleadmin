@@ -1,42 +1,40 @@
-<div class="row mail-client-container transparent">
-    <div class="col-md-12">
-        <div ba-panel ba-panel-class="xmedium-panel mail-panel">
-            <div class="letter-layout">
-                <div class="mail-navigation-container" ng-class="{'expanded' : !tabCtrl.navigationCollapsed}">
-                    <div class="text-center">
-                        <button type="button" class="btn btn-default compose-button" ng-click="tabCtrl.showCompose('','','')">
-                            Compose
-                        </button>
-                    </div>
-                    <div ng-repeat="t in tabCtrl.tabs" ui-sref-active="active" class="mail-navigation"
-                         ui-sref="components.mail.label({label: t.label})" ng-click="selectTab(t.label)">
-                        {{t.name}}<span class="new-mails" ng-show="t.newMails">{{t.newMails}}</span>
-                    </div>
-                    <div class="labels">
-                        <div class="labels-title">
+<div ba-panel ba-panel-class="panel light-text">
+    <button type="button" ng-repeat="obj in palette" class="btn btn-primary btn-raised btn-long" ng-click="editEvent(obj)" ng-class="{'btn-default':selectedObj.var.variable == obj.name}">
+        {{obj.name}}
+    </button>
+</div>
 
-                        </div>
-                        <div class="labels-container">
-                            <div class="label-item">
-                                <span class="tag label work">Work</span>
-                            </div>
-                            <div class="label-item">
-                                <span class="tag label family">Family</span>
-                            </div>
-                            <div class="label-item">
-                                <span class="tag label friend">Friend</span>
-                            </div>
-                            <div class="label-item">
-                                <span class="tag label study">Study</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="add-label-container">
-                        <i class="ion-plus-round"></i><span class="label-input-stub">Add new label</span>
-                    </div>
-                </div>
-                <ui-view></ui-view>
-            </div>
+
+<div ba-panel ba-panel-class="panel light-text" ng-show="selectedObj">
+    <h2>{{selectedObj.var.variable}}</h2>
+
+
+    <uib-tabset active="$tabSetStatus.activeTab">
+        <uib-tab ng-repeat="n in selectedObj.var.body" heading="{{n.attribute.attrName}}" ng-click="setCode(n)">
+
+        </uib-tab>
+
+
+    </uib-tabset>
+
+    <div ui-ace="{
+          useWrapMode : true,
+          showGutter: false,
+          theme:'twilight',
+          mode: 'javascript'}" ng-model="code.attrValue"></div>
+    <div class="row">
+        <div class="col-md-1">
+            <button type="button" class="btn btn-with-icon" onclick="addWatcher()"><i class="ion-plus-round"></i></button>
         </div>
+        <div class="form-group col-md-11">
+            <input type="text" tag-input="primary" ng-model="watchers" data-role="tagsinput" placeholder="Add Watcher">
+
+        </div>
+    </div>
+
+    <div>
+        <button type="button" class="btn btn-primary btn-raised btn-long" ng-click="cloneEvent()">Clone</button>
+
+        <button type="button" class="btn btn-primary btn-raised btn-long" ng-click="saveEvent()">Save</button>
     </div>
 </div>

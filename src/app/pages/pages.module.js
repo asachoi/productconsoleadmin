@@ -4,59 +4,80 @@
  */
 (function () {
   'use strict';
-
   angular.module('BlurAdmin.pages', [
     'ui.router',
-
     'BlurAdmin.pages.dashboard',
-    'BlurAdmin.pages.ui',
-    'BlurAdmin.pages.components',
-    'BlurAdmin.pages.form',
-    'BlurAdmin.pages.tables',
-    'BlurAdmin.pages.charts',
-    'BlurAdmin.pages.maps',
-    'BlurAdmin.pages.profile',
+    'BlurAdmin.pages.commonlibrary',
+    'BlurAdmin.pages.productsetup',
+    //'BlurAdmin.pages.ui',
+    //'BlurAdmin.pages.form',
   ])
-      .config(routeConfig);
+  .config(routeConfig);
+
 
   /** @ngInject */
   function routeConfig($urlRouterProvider, baSidebarServiceProvider) {
     $urlRouterProvider.otherwise('/dashboard');
 
+/*
     baSidebarServiceProvider.addStaticItem({
-      title: 'Pages',
+      title: 'Product Setup',
+      icon: 'ion-ios-more',
+      subMenu: [
+      {
+        title: 'Mapping',
+        disabled: true
+      },
+      {
+        title: 'Calculation Setup',
+        disabled: true
+      },
+      {
+        title: 'UI setup',
+        disabled: true
+      },
+      {
+        title: 'Printout setup',
+      },
+            {
+              title: 'Configuration',
+            },
+      ]
+    });
+    baSidebarServiceProvider.addStaticItem({
+      title: 'Common Library',
       icon: 'ion-document',
       subMenu: [{
-        title: 'Sign In',
-        fixedHref: 'auth.html',
-        blank: true
+        title: 'Calculation',
+        subMenu: [
+        {
+          title: 'Event group',
+          disabled: true
+        },
+        {
+          title: 'Event formula',
+          disabled: true
+        },
+        {
+          title: 'Premium calc.',
+          disabled: true
+        },
+        {
+          title: 'Validation',
+          disabled: true
+        },
+
+        ]
       }, {
-        title: 'Sign Up',
+        title: 'UI Component',
         fixedHref: 'reg.html',
-        blank: true
-      }, {
-        title: 'User Profile',
-        stateRef: 'profile'
-      }, {
-        title: '404 Page',
-        fixedHref: '404.html',
-        blank: true
-      }]
-    });
-    baSidebarServiceProvider.addStaticItem({
-      title: 'Menu Level 1',
-      icon: 'ion-ios-more',
-      subMenu: [{
-        title: 'Menu Level 1.1',
         disabled: true
       }, {
-        title: 'Menu Level 1.2',
-        subMenu: [{
-          title: 'Menu Level 1.2.1',
-          disabled: true
-        }]
+        title: 'Printout Component',
+        disabled: true
       }]
     });
+*/
   }
 
 })();
